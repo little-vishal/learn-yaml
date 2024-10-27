@@ -1,0 +1,60 @@
+# Feature
+---
+# one line
+text: This is 
+     a short story 
+     about an apple.
+
+# multi line
+text2: |
+     This is 
+     a short story 
+     about an apple.
+
+# folded style
+text3: >
+     This is 
+     a short story 
+
+     about an apple.
+
+# anchor and alias
+item: &item_anchor [1,2,3]
+
+tools: 
+  name: "hammer"
+  item: *item_anchor
+
+
+person: &person_anchor
+  name: "John"
+  age: 30
+
+person1: 
+  <<: *person_anchor
+  name: "Jane"
+  age: 25
+
+
+#compact map
+compact_map: {name: "John", age: 30}
+compact_list: [1,2,"tst"]
+
+list: 
+  - name: "John"
+    age: 30
+  - name: "Jane"
+    age: 25
+
+map:
+  John: 30
+  Jane: 25
+
+no: no            # evaluates False: False
+yes: No           # evaluates to True: False
+not_enclosed: yes # evaluates to 'not_enclosed': True
+enclosed: "yes"   # evaluates to 'enclosed': 'yes'
+
+?
+: My key is empty
+...
